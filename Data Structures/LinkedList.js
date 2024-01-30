@@ -17,6 +17,7 @@ function Node(value, next, prev){
 // const taskNode = new Node({id: 1, task: "this is my task"}, "node2", null)
 // console.log(taskNode)
 
+// addToHead Method
 LinkedList.prototype.addToHead = function(value) {
     const newNode = new Node(value, this.head, null)
     if(this.head) this.head.prev = newNode
@@ -25,6 +26,7 @@ LinkedList.prototype.addToHead = function(value) {
     this.head = newNode
 }
 
+// addToTail Method
 LinkedList.prototype.addToTail = function(value) {
     const newNode = new Node(value, null, this.tail)
     if(this.tail) this.tail.next = newNode
@@ -33,6 +35,7 @@ LinkedList.prototype.addToTail = function(value) {
     this.tail = newNode
 }
 
+// removeHead Method
 LinkedList.prototype.removeHead = function() {
     if(!this.head) return null
     let val = this.head.value
@@ -42,6 +45,7 @@ LinkedList.prototype.removeHead = function() {
     return val
 }
 
+// removeTail Method
 LinkedList.prototype.removeTail = function() {
     if(!this.tail) return null
     let val = this.tail.value
@@ -51,6 +55,7 @@ LinkedList.prototype.removeTail = function() {
     return val
 }
 
+// search specific item Method
 LinkedList.prototype.search = function(val) {
     let currentNode = this.head
     while (currentNode) {
@@ -60,6 +65,7 @@ LinkedList.prototype.search = function(val) {
     return null
 }
 
+// find IndexOf Element Method
 LinkedList.prototype.indexOf = function (val) {
     let currentNode = this.head
     let indexList = []
@@ -72,8 +78,6 @@ LinkedList.prototype.indexOf = function (val) {
     }
 
     return indexList.length === 0 ?  "Not Found" : indexList
-
-   
 }
 
 const LL = new LinkedList()
